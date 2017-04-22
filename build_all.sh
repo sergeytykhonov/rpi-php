@@ -1,3 +1,5 @@
+REPO="sergeytykhonov/rpi-php"
+
 FULL_VERSION_71="7.1.4"
 FULL_VERSION_70="7.0.18"
 FULL_VERSION_56="5.6.30"
@@ -37,7 +39,7 @@ dockerBuild() {
     local cmd="docker build --pull"
 
     for tag in ${tags[*]}; do
-        cmd="${cmd} -t ${tag}"
+        cmd="${cmd} -t ${REPO}:${tag}"
     done
 
     cmd="${cmd} ${build_dir}"
