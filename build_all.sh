@@ -45,7 +45,11 @@ dockerBuild() {
 
     echo "===> ${cmd}"
 
-    eval $cmd && docker push ${REPO}
+    if eval $cmd; then
+        for tag in ${tags[*]}; do
+            docker push ${REPO}:${tag}
+        done
+    fi
 }
 
 
