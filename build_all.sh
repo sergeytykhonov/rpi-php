@@ -43,6 +43,8 @@ dockerBuild() {
     cmd="${cmd} ${build_dir}"
 
     echo "===> ${cmd}"
+
+    eval $cmd
 }
 
 
