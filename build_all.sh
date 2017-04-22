@@ -46,7 +46,7 @@ dockerBuild() {
 
     echo "===> ${cmd}"
 
-    eval $cmd
+    eval $cmd && docker push
 }
 
 
