@@ -26,7 +26,6 @@ dockerBuild() {
     local version="$1"
     local tags=("${!2}")
     local subfolder="$3"
-    local pwd=$(pwd)
 
     dockerBuildInfo $version tags[@] $subfolder
 
@@ -46,7 +45,7 @@ dockerBuild() {
 
     echo "===> ${cmd}"
 
-    eval $cmd && docker push
+    eval $cmd && docker push ${REPO}
 }
 
 
